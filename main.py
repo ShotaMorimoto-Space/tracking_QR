@@ -1,8 +1,8 @@
 # backend/main.py
 from fastapi import FastAPI
-from backend.api import track
-from backend.db_control import models
-from backend.db_control.database import engine
+from api import track
+from db_control import models
+from db_control.database import engine
 
 # FastAPIインスタンス生成
 app = FastAPI()
