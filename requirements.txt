@@ -1,0 +1,25 @@
+# FastAPI + API Server
+fastapi
+uvicorn[standard]
+gunicorn
+
+
+# Streamlit UI
+streamlit
+
+# SQLAlchemy + MySQL接続
+sqlalchemy
+pymysql
+
+# .env 読み込み
+python-dotenv
+
+# API通信（Streamlit → FastAPI）
+requests
+
+# Data handling（StreamlitでDataFrame表示・CSV出力）
+pandas
+altair
+
+# xls出力のライブラリ
+xlsxwriter
