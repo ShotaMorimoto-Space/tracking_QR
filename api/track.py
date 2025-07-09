@@ -18,6 +18,10 @@ class AccessLogCreate(BaseModel):
     target_url: str
     slug_prefix: str
 
+@router.get("/")
+def root():
+    return {"status": "FastAPI fujiplus ready"}
+
 @router.get("/track")
 def track(uid: str, db: Session = Depends(get_db)):
     access_log = crud.update_access_log(db, uid)
