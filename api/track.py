@@ -18,7 +18,7 @@ class AccessLogCreate(BaseModel):
     target_url: str
     slug_prefix: str
 
-@router.get("/" , methods=["GET", "HEAD"])
+@router.api_route("/" , methods=["GET", "HEAD"])
 async def root():
     return {"status": "FastAPI fujiplus ready"}
 
