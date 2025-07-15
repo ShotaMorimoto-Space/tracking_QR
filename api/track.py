@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query ,Response
 from sqlalchemy.orm import Session
 from db_control.database import get_db
 from db_control import crud
@@ -18,9 +18,17 @@ class AccessLogCreate(BaseModel):
     target_url: str
     slug_prefix: str
 
-@router.api_route("/" , methods=["GET", "HEAD"])
+@router.get("/")
 async def root():
     return {"status": "FastAPI fujiplus ready"}
+
+@router.get("/wake")
+async def wakeup_get():
+    return {"status": "wakeup GET OK"}
+
+@router.api_route("/wake_head", methods=["HEAD"])
+async def wakeup_head():
+    return Response(status_code=200)
 
 @router.get("/track")
 def track(uid: str, db: Session = Depends(get_db)):
