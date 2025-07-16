@@ -33,7 +33,9 @@ engine = create_engine(
         "ssl": {
             "ca": SSL_CERT_PATH
         }
-    }
+    },
+    pool_pre_ping=True,
+    pool_recycle=3600        #（1時間ごとにDBの接続確認）
 )
 
 # --- セッション作成 ---
